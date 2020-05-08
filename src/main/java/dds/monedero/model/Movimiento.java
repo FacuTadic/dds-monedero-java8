@@ -35,6 +35,7 @@ public class Movimiento {
     return this.fecha.equals(fecha);
   }
 
+  //Mala eleccion de nombre, no sigue la estructura definida
   public boolean isDeposito() {
     return esDeposito;
   }
@@ -43,11 +44,14 @@ public class Movimiento {
     return !esDeposito;
   }
 
+
+  //Rompe encapsulamiento, no le corresponde esa responsabilidad
   public void agregateA(Cuenta cuenta) {
     cuenta.setSaldo(calcularValor(cuenta));
     cuenta.agregarMovimiento(fecha, monto, esDeposito);
   }
 
+  //Rompe encapsulamiento, no le corresponde esa responsabilidad
   public double calcularValor(Cuenta cuenta) {
     if (esDeposito) {
       return cuenta.getSaldo() + getMonto();
