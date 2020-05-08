@@ -27,6 +27,7 @@ public class Cuenta {
     this.movimientos = movimientos;
   }
 
+
   //Mala eleccion de nombre, poner que? y cuanto que?
   public void poner(double cuanto) {
     if (cuanto <= 0) {
